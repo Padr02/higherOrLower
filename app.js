@@ -27,16 +27,13 @@ async function getDeck() {
 }
 getDeck();
 
-//dra kort
+//dra kort  från deck //visa kort och dölj start knappen
 drawCardButt.addEventListener("click", async () => {
   const res = await fetch(
     `https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=1`
   );
-  //visa kort och dölj start knappen
-  drawCardButt.classList.add("hide");
-  highOrLow.classList.remove("hide");
-  high.classList.remove("hide");
-  low.classList.remove("hide");
+  addClass(drawCardButt);
+  removeClass(highOrLow, high, low);
   const data = await res.json();
   getValue(data);
   drawnCard = data.cards[0].value;
@@ -51,6 +48,7 @@ drawCardButt.addEventListener("click", async () => {
   console.log(drawnCard);
 });
 
+//higher knappen
 high.addEventListener("click", async () => {
   const res = await fetch(
     `https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=1`
@@ -64,15 +62,16 @@ high.addEventListener("click", async () => {
   getValue(data);
   higher = data.cards[0].value;
   cardNum.innerText = data.cards[0].value;
+
   cardDiv.appendChild(cardImg);
   cardDiv.appendChild(cardNum);
   winner(drawnCard, higher, player, playerL, playerD, playerW);
   console.log(data.cards[0]);
   console.log(higher);
-  high.classList.add("hide");
-  low.classList.add("hide");
+  addClass(high, low);
 });
 
+//lower knappen
 low.addEventListener("click", async () => {
   const res = await fetch(
     `https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=1`
@@ -91,21 +90,30 @@ low.addEventListener("click", async () => {
   winner(lower, drawnCard, player, playerL, playerD, playerW);
   console.log(data.cards[0]);
   console.log(lower);
-  high.classList.add("hide");
-  low.classList.add("hide");
+  addClass(high, low);
 });
 
+//starta om knappen
 restart.addEventListener("click", function () {
-  drawCardButt.classList.remove("hide");
-  high.classList.add("hide");
-  low.classList.add("hide");
   cardDiv.innerHTML = "";
-  playerW.classList.add("hide");
-  playerD.classList.add("hide");
-  playerL.classList.add("hide");
-  player.classList.remove("hide");
+  addClass(high, low, playerW, playerD, playerL);
+  removeClass(player, drawCardButt);
 });
 
+//hoistade funktioner-----------------------------------
+
+//lägg till class
+function addClass(...e) {
+  for (let i = 0; i < arguments.length; i++) {
+    e[i].classList.add("hide");
+  }
+}
+//ta bort class
+function removeClass(...e) {
+  for (let i = 0; i < arguments.length; i++) {
+    e[i].classList.remove("hide");
+  }
+}
 //omvandla sträng till nummer
 function getValue(data) {
   switch (data.cards[0].value) {
