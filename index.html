@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Higher Or Lower</title>
     <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button id="drawCard" class="suit">Starta Spelet</button>
-    <div id="cardsDiv">
-      <h3 id="cardValue"></h3>
-      <img src="" alt="" />
+    <button class="restart">restart ↩</button>
+    <div class="playerDiv">
+      <h1 class="player">♥ ♦ ♠ ♣</h1>
+      <h1 class="player hide" id="playerWin">You win</h1>
+      <h1 class="player hide" id="playerLose">You loose</h1>
+      <h1 class="player hide" id="playerDraw">Draw</h1>
+    </div>
+    <div id="cardDiv"></div>
+    <div class="higherOrLower">
+      <button class="btn higher hide">Higher ⬆</button>
+      <button class="btn lower hide">Lower ⬇</button>
+      <button id="drawCard" class="suit">➡ Draw Card ⬅</button>
     </div>
   </body>
 </html>

@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+.playerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7rem;
+  position: relative;
+  z-index: 2;
+}
+.player {
+  color: #444;
+  font-family: inherit;
+  font-size: 10rem;
+  text-transform: uppercase;
+}
+
+.suit {
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: gold;
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  margin-top: 32rem;
+}
+
+#cardDiv {
+  display: flex;
+  padding-top: 5rem;
+  justify-content: center;
+}
+
+body {
+  background: green;
+}
+.btn {
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: gold;
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+.higherOrLower {
+  display: flex;
+  margin-top: 10rem;
+  justify-content: center;
+  align-items: center;
+}
+.hide {
+  display: none;
+}
+
+.restart {
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: gold;
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+}
