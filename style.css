@@ -46,6 +46,10 @@ html {
   padding-top: 5rem;
   justify-content: center;
 }
+#cardDiv > h1 {
+  padding-right: 2rem;
+  padding-left: 0.3rem;
+}
 
 body {
   background: green;
